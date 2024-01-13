@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis Noticias
+    </ion-title>
+    <ion-segment scrollable="true" value="default" (ionChange)="noticiasRest.consultaGet($event)">
+      <ion-segment-button value="GENERAL">
+        <ion-label>GENERAL</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="BUSINESS">
+        <ion-label>BUSINESS</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="TECHNOLOGY">
+        <ion-label>TECHNOLOGY</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="SCIENCE">
+        <ion-label>SCIENCE</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let noticia of noticiasRest.listaNoticiasRest">
+    <ion-item>
+      <ion-checkbox color="primary" slot="start" [checked]="seleccionado(noticia)" (ionChange)="checkNoticia($event, noticia)"></ion-checkbox>
+      <ion-label color="primary" class="ion-text-wrap">
+        <h3>{{ noticia.source.name}} </h3>
+        <p> {{ noticia.title}} </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+​
