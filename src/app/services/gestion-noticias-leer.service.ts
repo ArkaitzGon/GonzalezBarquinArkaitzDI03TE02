@@ -10,12 +10,6 @@ export class GestionNoticiasLeerService {
   public leerNoticias : Article[] = [];
 
   constructor(public gestionNoticias: GestionStorageService) {
-    // Inicializo la vista de los articulos para leer
-    /*let datos: Promise<Article[]> = gestionNoticias.getObject("noticias");
-
-    datos.then(dat=>{
-      this.leerNoticias.push(...dat);
-    })*/
    }
 
   // Devuelve todas las noticias para leer
